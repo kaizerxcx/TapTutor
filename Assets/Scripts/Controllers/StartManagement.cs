@@ -71,9 +71,9 @@ public class StartManagement : MonoBehaviour
              Debug.Log(child_id);*/
         if (Int32.Parse(response.Data) > 0)
         {
-            SceneManager.LoadScene("HomeScreen");
             SessionManagement.Instance.setIsLogin(1);
             SessionManagement.Instance.setChildID(Int32.Parse(response.Data));
+            SceneManager.LoadScene("HomeScreen");
          
         }
         else

@@ -11,15 +11,21 @@ public class NumberController : MonoBehaviour
     public static int points = 0;
     public GameObject completed;
     public Text score;
+    public Button next;
     // Start is called before the first frame update
     void Start()
     {
+        score.text = "0";
         completed.SetActive(false);
         int child_id = SessionManagement.Instance.getChildID();
         StartCoroutine(Main.Instance.web.getNumberPoints(child_id, (r) => getPoints(r)));
-        score.text = NumberController.points.ToString();
+        //score.text = NumberController.points.ToString();
         backButton.onClick.AddListener(back);
-       
+        next.onClick.AddListener(() =>
+        {
+            completed.SetActive(false);
+            SceneManager.LoadScene("LevelNumber");
+        });
 
     }
     public void getPoints(Response response)
@@ -48,9 +54,10 @@ public class NumberController : MonoBehaviour
             }
         }
 
-        if (int.Parse(score.text) == 15)
+        if (int.Parse(score.text) == 25)
         {
-            completed.transform.localPosition = Vector3.zero;
+           // completed.transform.localPosition = Vector3.zero;
+
             completed.SetActive(true);
             
         }

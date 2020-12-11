@@ -8,13 +8,22 @@ public class HomeScreenController : MonoBehaviour
     public Button shapeButton;
     public Button numberButton;
     public Button letterButton;
+    public GameObject userDashboard;
+    public GameObject homescreen;
+    public Button toUserDashboard;
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(SessionManagement.Instance.getChildID());
+      //  Debug.Log(SessionManagement.Instance.getChildID());
         shapeButton.onClick.AddListener(goToShape);
         letterButton.onClick.AddListener(goToLetter);
         numberButton.onClick.AddListener(goToNumber);
+
+        toUserDashboard.onClick.AddListener(() =>
+        {
+            homescreen.SetActive(false);
+            userDashboard.SetActive(true);
+        });
     }
     public void goToShape()
     {

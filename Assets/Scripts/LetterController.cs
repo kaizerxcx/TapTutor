@@ -11,15 +11,19 @@ public class LetterController : MonoBehaviour
     public static int points;
     public GameObject completed;
     public Text score;
+    public Button next;
     // Start is called before the first frame update
     void Start()
     {
         completed.SetActive(false);
         int child_id = SessionManagement.Instance.getChildID();
         StartCoroutine(Main.Instance.web.getLetterPoints(child_id, (r) => getPoints(r)));
-        score.text = LetterController.points.ToString();
+      
         backButton.onClick.AddListener(back);
-     
+        next.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("LevelLetter");
+        });
 
     }
     public void getPoints(Response response)

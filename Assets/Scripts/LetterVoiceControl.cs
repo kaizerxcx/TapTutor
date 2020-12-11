@@ -39,11 +39,17 @@ public class LetterVoiceControl : MonoBehaviour
         checkPermision();
         lastNumber = 3;
         mic.onClick.AddListener(startRecording);
-        questionIndex = GetRandom(0, 3);
-        questionImage = new string[3];
+        questionIndex = GetRandom(0, 9);
+        questionImage = new string[9];
         questionImage[0] = "watermelon";
         questionImage[1] = "lemon";
         questionImage[2] = "vegetable";
+        questionImage[3] = "banana";
+        questionImage[4] = "eggplant";
+        questionImage[5] = "lettuce";
+        questionImage[6] = "mushroom";
+        questionImage[7] = "raspberry";
+        questionImage[8] = "tomato";
         answer = questionImage[questionIndex];
         startSpeaking(instruction);
         image.sprite = Resources.Load<Sprite>(questionImage[questionIndex]);
@@ -119,7 +125,7 @@ public class LetterVoiceControl : MonoBehaviour
             int child_id = SessionManagement.Instance.getChildID();
             StartCoroutine(Main.Instance.web.setLetterPoints(child_id, System.Int32.Parse(score.text)));
             SoundManagerScript.playSound("answerCorrect");
-            questionIndex = GetRandom(0, 3);
+            questionIndex = GetRandom(0, 9);
             answer = questionImage[questionIndex];
             image.sprite = Resources.Load<Sprite>(questionImage[questionIndex]);
             uiText.text = instruction;
@@ -139,7 +145,7 @@ public class LetterVoiceControl : MonoBehaviour
             int child_id = SessionManagement.Instance.getChildID();
             StartCoroutine(Main.Instance.web.setLetterPoints(child_id, System.Int32.Parse(score.text)));
             SoundManagerScript.playSound("answerCorrect");
-            questionIndex = GetRandom(0, 3);
+            questionIndex = GetRandom(0, 9);
             answer = questionImage[questionIndex];
             image.sprite = Resources.Load<Sprite>(questionImage[questionIndex]);
             uiText.text = instruction;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
+
 public class UserController : MonoBehaviour
 {
     public InputField firstname;
@@ -24,12 +26,14 @@ public class UserController : MonoBehaviour
     public GameObject loginCanvas;
 
     public GameObject registerCanvas;
+
     // Start is called before the first frame update
     void Start()
     {
         registerButton.onClick.AddListener(() =>
         {
             StartCoroutine(Main.Instance.web.registerUser(firstname.text, middlename.text, lastname.text, Int32.Parse(age.text), username.text, password.text));
+            SceneManager.LoadScene("HomeScreen");
         });
 
         goToLogin.onClick.AddListener(() => {

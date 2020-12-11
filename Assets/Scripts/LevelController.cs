@@ -7,22 +7,28 @@ using RestClient.Core.Models;
 using System;
 public class LevelController : MonoBehaviour
 {
-    public Button backButton;
+    public Button backButton1;
+    public Button backButton2;
     public static int points = 0;
-    public GameObject completed;
+    public GameObject completed1;
+    public GameObject completed2;
     public static bool isRestart;
     public Text score;
     // Start is called before the first frame update
     void Start()
     {
-        completed.SetActive(false);
-        backButton.onClick.AddListener(back);
+        completed1.SetActive(false);
+      
+        backButton1.onClick.AddListener(back);
         int child_id = SessionManagement.Instance.getChildID();
         StartCoroutine(Main.Instance.web.getShapePoints(child_id, (r) => getPoints(r)));
-        score.text = LetterController.points.ToString();
+   //     score.text = LetterController.points.ToString();
         LevelController.isRestart = true;
-        
-       // StartCoroutine(Main.Instance.web.setShapePoints(child_id, 50));
+
+        backButton2.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("HomeScreen");
+        });
     }
     public void getPoints(Response response)
     {
@@ -54,15 +60,20 @@ public class LevelController : MonoBehaviour
 
         if (isRestart)
         {
-            completed.SetActive(false);
+            completed1.SetActive(false);
             
             LevelController.isRestart = true;
 
         }
         if (int.Parse(score.text) == 15)
         {
-            completed.transform.localPosition = Vector3.zero;
-            completed.SetActive(true);
+            completed1.transform.localPosition = Vector3.zero;
+            completed1.SetActive(true);
+
+        }
+        if (int.Parse(score.text) == 30)
+        {
+            completed2.SetActive(true);
 
         }
     }

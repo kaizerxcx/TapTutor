@@ -814,6 +814,7 @@ MonoBehaviour:
   backButton: {fileID: 18966782}
   completed: {fileID: 1362109715}
   score: {fileID: 133300482}
+  next: {fileID: 1362109716}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1161,6 +1162,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1362109713}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1362109716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6952723261245856252, guid: e12d6d5e9080ae3409cea9db6da77144,
+    type: 3}
+  m_PrefabInstance: {fileID: 1362109713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1379719235
 GameObject:
   m_ObjectHideFlags: 0
