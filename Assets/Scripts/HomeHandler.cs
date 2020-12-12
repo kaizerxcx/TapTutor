@@ -13,12 +13,26 @@ public class HomeHandler : MonoBehaviour
     public GameObject userProfile;
     public Text letters;
     public Text numbers;
+    public Button goToprogress;
+    public Button backButton;
+
     void Start()
     {
         int child_id = SessionManagement.Instance.getChildID();
         Debug.Log(child_id);
         StartCoroutine(Main.Instance.web.getLetterPoints(child_id, (r) => getLetterPoints(r)));
         StartCoroutine(Main.Instance.web.getNumberPoints(child_id, (r) => getNumberPoints(r)));
+
+        goToprogress.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("UserProgress");
+        });
+
+        backButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("HomeScreen");
+            Debug.Log("button clicked!");
+        });
     }
     public void getLetterPoints(Response response)
     {

@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using RestClient.Core.Models;
+using System;
 public class SessionManagement : MonoBehaviour
 {
     public static SessionManagement Instance;
@@ -14,6 +15,8 @@ public class SessionManagement : MonoBehaviour
     {
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
+     
+      
     }
 
     // Update is called once per frame
@@ -40,4 +43,5 @@ public class SessionManagement : MonoBehaviour
         return PlayerPrefs.GetInt("isLogin");
     }
 
+   
 }

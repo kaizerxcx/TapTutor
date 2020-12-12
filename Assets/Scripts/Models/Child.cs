@@ -11,6 +11,8 @@ public class Child : User
 
     public string password { get; set; }
 
+    public int points { get; set; }
+
     public void registerChild(string firstname, string middlename, string lastname, int age, string username, string password )
     {
         this.firstname = firstname;

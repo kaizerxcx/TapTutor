@@ -10,7 +10,9 @@ public class HomeScreenController : MonoBehaviour
     public Button letterButton;
     public GameObject userDashboard;
     public GameObject homescreen;
+    public GameObject userProfile;
     public Button toUserDashboard;
+    public Button back;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,11 @@ public class HomeScreenController : MonoBehaviour
         toUserDashboard.onClick.AddListener(() =>
         {
             homescreen.SetActive(false);
+            userDashboard.SetActive(true);
+        });
+        back.onClick.AddListener(() =>
+        {
+            userProfile.SetActive(false);
             userDashboard.SetActive(true);
         });
     }

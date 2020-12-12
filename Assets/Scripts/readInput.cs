@@ -6,14 +6,18 @@ using UnityEngine.UI;
 public class readInput : MonoBehaviour
 {
 
-    public string starPoints;
-    public GameObject inputField;
-    public GameObject textDisplay;
-
+  
+    public InputField inputField;
+    public Text textDisplay;
+    public Button button;
     public void StorePoints()
     {
-        starPoints = inputField.GetComponent<Text>().text;
-        textDisplay.GetComponent<Text>().text = "Requires: " + starPoints + " Point/s";
+        string starPoints = inputField.text;
+        button.onClick.AddListener(() =>
+        {
+            textDisplay.text = "Requires: " + starPoints + " Point/s";
+        });
 
     }
+    
 }

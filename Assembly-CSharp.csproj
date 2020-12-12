@@ -63,6 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ProgressBar\Scene\Demo.cs" />
+    <Compile Include="Assets\ProgressBar\Script\ProgressBar.cs" />
+    <Compile Include="Assets\ProgressBar\Script\ProgressBarCircle.cs" />
+    <Compile Include="Assets\Scripts\BackButtonHandler.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Progress\ColorProgress.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Progress\LetterProgress.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Progress\NumberProgress.cs" />
+    <Compile Include="Assets\Scripts\Controllers\Progress\ShapesProgress.cs" />
     <Compile Include="Assets\Scripts\Controllers\SessionManagement.cs" />
     <Compile Include="Assets\Scripts\Controllers\StartManagement.cs" />
     <Compile Include="Assets\Scripts\Controllers\UserController.cs" />
@@ -81,12 +89,15 @@
     <Compile Include="Assets\Scripts\NumberController.cs" />
     <Compile Include="Assets\Scripts\NumberVoiceControl.cs" />
     <Compile Include="Assets\Scripts\PauseScript.cs" />
+    <Compile Include="Assets\Scripts\PointsHandler.cs" />
     <Compile Include="Assets\Scripts\PressHandler.cs" />
+    <Compile Include="Assets\Scripts\ProfileEditor.cs" />
     <Compile Include="Assets\Scripts\ShapeLevel\CircleScript.cs" />
     <Compile Include="Assets\Scripts\ShapeLevel\SquareScript.cs" />
     <Compile Include="Assets\Scripts\ShapeLevel\TriangleScript.cs" />
     <Compile Include="Assets\Scripts\SoundManagerScript.cs" />
     <Compile Include="Assets\Scripts\UIscript.cs" />
+    <Compile Include="Assets\Scripts\UserLeaderboard.cs" />
     <Compile Include="Assets\Scripts\counter.cs" />
     <Compile Include="Assets\Scripts\playerpoints.cs" />
     <Compile Include="Assets\Scripts\readInput.cs" />
