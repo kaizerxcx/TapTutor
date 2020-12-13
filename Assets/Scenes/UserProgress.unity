@@ -447,11 +447,11 @@ RectTransform:
   m_Father: {fileID: 1808773191}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.2013092, y: 132.76776}
-  m_SizeDelta: {x: 480.3791, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.000013773065, y: -12.8}
+  m_SizeDelta: {x: 652.3791, y: 100}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &403390075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your Progress
+  m_Text: My Progress
 --- !u!222 &403390076
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -821,7 +821,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 15.501305, y: -15.299988}
+  m_AnchoredPosition: {x: 15.501305, y: -19}
   m_SizeDelta: {x: 71.01712, y: 55.925964}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &649410390

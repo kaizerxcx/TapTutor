@@ -2294,12 +2294,12 @@ PrefabInstance:
     - target: {fileID: 7197203183845176093, guid: aa54d849a2bf93245a489119a18fa410,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 117
+      value: 108
       objectReference: {fileID: 0}
     - target: {fileID: 7197203183845176093, guid: aa54d849a2bf93245a489119a18fa410,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -55.99999
+      value: -113
       objectReference: {fileID: 0}
     - target: {fileID: 7197203183845176093, guid: aa54d849a2bf93245a489119a18fa410,
         type: 3}
@@ -8245,7 +8245,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: REGISTER
+  m_Text: Update Information
 --- !u!224 &5385272588157085016
 RectTransform:
   m_ObjectHideFlags: 0
