@@ -23,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelLetter.unity
     guid: 5ff96452ffdf69a44ad2338813b3c40c
+  - enabled: 1
+    path: Assets/Scenes/ColorsHomeScreen.unity
+    guid: 41169af7f36e7794594dceaafc40afb2
+  - enabled: 1
+    path: Assets/Scenes/ColorPop.unity
+    guid: ef53dca441563004889cd3d4cc87b023
+  - enabled: 1
+    path: Assets/Scenes/ColorPronunciation.unity
+    guid: 2e7db5423119de943a450f1f15860bfd
+  - enabled: 1
+    path: Assets/Scenes/ColorCapture.unity
+    guid: a2a4f5955cb1cc14ca9b6bc2969ea2cc
   m_configObjects: {}

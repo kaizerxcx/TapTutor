@@ -12,12 +12,13 @@ public class ColorProgress : MonoBehaviour
     {
 
         int child_id = SessionManagement.Instance.getChildID();
-        color.BarValue = 0f;
+        StartCoroutine(Main.Instance.web.getColorPoints(child_id, (r) => getColor(r)));
     }
     public void getColor(Response response)
     {
+        float value = float.Parse(response.Data) / 200;
+        color.BarValue = value * 100;
 
-       
     }
     // Update is called once per frame
     void Update()

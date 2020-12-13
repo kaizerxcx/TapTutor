@@ -330,4 +330,75 @@ public class Web : MonoBehaviour
         }
     }
 
+    public IEnumerator setColorPoints(int child_id, int points)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("child_id", child_id);
+        form.AddField("points", points);
+        using (UnityWebRequest www = UnityWebRequest.Post("http://52.237.120.241/TapTutor/setColorPoints.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log(www.downloadHandler.text);
+            }
+        }
+    }
+
+    public IEnumerator getColorPoints(int child_id, System.Action<Response> callback)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("child_id", child_id);
+        using (UnityWebRequest www = UnityWebRequest.Post("http://52.237.120.241/TapTutor/getColorPoints.php", form))
+        {
+            /* www.uploadHandler.contentType = defaultContentType;
+             www.uploadHandler = new UploadHandlerRaw(System.Text.Encoding.UTF8.GetBytes(body));*/
+
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError)
+            {
+                callback(new Response
+                {
+                    StatusCode = www.responseCode,
+                    Error = www.error
+                });
+            }
+            if (www.isDone)
+            {
+                string data = System.Text.Encoding.UTF8.GetString(www.downloadHandler.data);
+                callback(new Response
+                {
+                    StatusCode = www.responseCode,
+                    Error = www.error,
+                    Data = data
+                });
+            }
+        }
+    }
+
+    public IEnumerator deleteInfo(int child_id)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("child_id", child_id);
+        using (UnityWebRequest www = UnityWebRequest.Post("http://52.237.120.241/TapTutor/deleteInfo.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                Debug.Log(www.downloadHandler.text);
+            }
+        }
+    }
+
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class HomeScreenController : MonoBehaviour
 {
+    public Button colorButton;
     public Button shapeButton;
     public Button numberButton;
     public Button letterButton;
@@ -30,6 +31,12 @@ public class HomeScreenController : MonoBehaviour
         {
             userProfile.SetActive(false);
             userDashboard.SetActive(true);
+        });
+
+        colorButton.onClick.AddListener(() =>
+        {
+            SoundManagerScript.playSound("buttonSound");
+            SceneManager.LoadScene("ColorsHomeScreen");
         });
     }
     public void goToShape()

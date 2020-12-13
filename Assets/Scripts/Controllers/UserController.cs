@@ -27,13 +27,15 @@ public class UserController : MonoBehaviour
 
     public GameObject registerCanvas;
 
+
     // Start is called before the first frame update
     void Start()
     {
         registerButton.onClick.AddListener(() =>
         {
             StartCoroutine(Main.Instance.web.registerUser(firstname.text, middlename.text, lastname.text, Int32.Parse(age.text), username.text, password.text));
-            SceneManager.LoadScene("HomeScreen");
+            registerCanvas.SetActive(false);
+            loginCanvas.SetActive(true);
         });
 
         goToLogin.onClick.AddListener(() => {

@@ -20,6 +20,9 @@ public class StartManagement : MonoBehaviour
 
     public InputField password;
 
+    public GameObject dialogBox;
+
+    public Button exit;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,39 +41,18 @@ public class StartManagement : MonoBehaviour
             StartCoroutine(Main.Instance.web.login(username.text, password.text, (r) => OnRequestComplete(r)));
 
         });
+
+        exit.onClick.AddListener(() =>
+        {
+            dialogBox.SetActive(false);
+        });
     }
 
     void OnRequestComplete(Response response)
     {
-        /*   Debug.Log($"Status Code: {response.StatusCode}");
-           Debug.Log($"Data: {response.Data}");
-           Debug.Log($"Error: {response.Error}");*/
-        /*
-                if (response.Data.Contains("Login Success"))
-                {
-                    SceneManager.LoadScene("HomeScreen");
-                    Debug.Log($"Data: {response.Data}");
-                }
-                else
-                {
-                    Debug.Log($"Status Code: {response.StatusCode}");
-                    Debug.Log($"Data: {response.Data}");
-                    Debug.Log($"Error: {response.Error}");
-                }*/
-
-        /* var Sresponse = JsonConvert.DeserializeObject<List<Child>>(response.Data);
-         foreach (var result in Sresponse)
-         {
-             child_id = result.child_id;
-         }
-         if (Int32.TryParse(child_id.ToString(), out int number))
-         {
-             SceneManager.LoadScene("HomeScreen");
-         }
-         else
-             Debug.Log(child_id);*/
         if (Int32.Parse(response.Data) > 0)
         {
+            dialogBox.SetActive(false);
             SessionManagement.Instance.setIsLogin(1);
             SessionManagement.Instance.setChildID(Int32.Parse(response.Data));
             SceneManager.LoadScene("HomeScreen");
@@ -78,6 +60,7 @@ public class StartManagement : MonoBehaviour
         }
         else
         {
+            dialogBox.SetActive(true);
             SessionManagement.Instance.setIsLogin(0);
             Debug.Log(response.Data);
         }
@@ -89,6 +72,12 @@ public class StartManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Application.platform == RuntimePlatform.Android)
+        {
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+        }
     }
 }
